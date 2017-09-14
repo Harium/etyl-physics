@@ -18,13 +18,19 @@ public class RigidBody extends Body {
     private Layer layer;
 
     public RigidBody(Layer layer) {
+        this(layer, true);
+    }
+
+    public RigidBody(Layer layer, boolean initFixture) {
         super();
         this.layer = layer;
         this.x = layer.getX();
         this.y = layer.getY();
 
-        addFixture(new BodyFixture(new org.dyn4j.geometry.Rectangle(layer.getW() * layer.getScaleX(), layer.getH() * layer.getScaleY())));
-        translate(layer.getX() + (layer.getW() * layer.getScaleX()) / 2, layer.getY() + (layer.getH() * layer.getScaleY()) / 2);
+        if (initFixture) {
+            addFixture(new BodyFixture(new org.dyn4j.geometry.Rectangle(layer.getW() * layer.getScaleX(), layer.getH() * layer.getScaleY())));
+            translate(layer.getX() + (layer.getW() * layer.getScaleX()) / 2, layer.getY() + (layer.getH() * layer.getScaleY()) / 2);
+        }
 
         setMass(MassType.NORMAL);
     }
