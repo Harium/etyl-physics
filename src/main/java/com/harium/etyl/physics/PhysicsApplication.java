@@ -13,6 +13,7 @@ public abstract class PhysicsApplication extends Application {
     public PhysicsApplication(int w, int h) {
         super(w, h);
 
+        world.getSettings().setStepFrequency(1 / 6d);
         world.setGravity(World.EARTH_GRAVITY.negate());
     }
 
