@@ -26,14 +26,10 @@ package examples.physics;
 
 import com.harium.etyl.Etyl;
 import com.harium.etyl.commons.context.Application;
+import examples.physics.application.Billiards;
 import examples.physics.application.BoxesFalling;
 
 public class PhysicsExample extends Etyl {
-
-    /**
-     * The serial version id
-     */
-    private static final long serialVersionUID = 5663760293144882635L;
 
     /**
      * Default constructor for the window
@@ -48,6 +44,7 @@ public class PhysicsExample extends Etyl {
     }
 
     public Application startApplication() {
+        //return new Billiards(w, h);
         return new BoxesFalling(w, h);
     }
 

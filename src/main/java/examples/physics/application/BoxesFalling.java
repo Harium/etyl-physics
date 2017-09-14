@@ -39,9 +39,6 @@ public class BoxesFalling extends PhysicsApplication {
             crates.add(crate);
         }
 
-        //crates.get(0).getLinearVelocity().set(50, 20.0);
-        last = System.currentTimeMillis();
-
         loading = 100;
     }
 
@@ -60,20 +57,9 @@ public class BoxesFalling extends PhysicsApplication {
         }
     }
 
-    /**
-     * The time stamp for the last iteration
-     */
-    protected long last;
-
     private void updateWorld(long time) {
-        // get the elapsed time from the last iteration
-        long diff = time - last;
-        // set the last time
-        last = time;
-
         // update the world with the elapsed time
         world.update(time);
-        //this.world.updatev(time);
     }
 
 }
